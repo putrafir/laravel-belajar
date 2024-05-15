@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Web Desain',
             'slug' => 'web-desain'
         ]);
-
+ 
         Categories::create([
             'name' => 'Personal',
             'slug' => 'personal'

@@ -4,10 +4,6 @@
 
 <h1>{{ $title }}</h1>
 
-
-
-
-
 @if ($posts->count())
 <div class="card mb-3">
     <img src="https://source.unsplash.com/1200x400?{{ $posts[0]->category->name }}" class="card-img-top" alt="{{ $posts[0]->category->name }}">
@@ -25,7 +21,6 @@
      
     </div>
 </div>
-
 
 
 {{-- poansc
