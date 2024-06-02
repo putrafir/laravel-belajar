@@ -7,7 +7,7 @@
     </div>
 
     @if (@session('succes'))
-        <div class="alert alert-primary" role="alert">
+        <div class="alert alert-primary col-lg-8" role="alert">
             {{ session('succes') }}
         </div>
     @endif
@@ -31,10 +31,16 @@
                         <td>{{ $post->category->name }}</td>
                         <td class=" d-flex gap-2 justify-content-center">
                             <a href="/dashboard/posts/{{ $post->slug }}"><i class="btn bi-eye btn-info"></i></span></a>
-                            <a href="/dashboard/posts{{ $post->id }}"><i
+                            <a href="/dashboard/posts/{{ $post->slug }}/edit"><i
                                     class="btn bi-pencil btn-warning"></i></span></a>
-                            <a href="/dashboard/posts{{ $post->id }}"><i
-                                    class="btn bi-x-circle btn-danger"></i></span></a>
+
+                            <form action="/dashboard/posts/{{ $post->slug }}" method="POST" class=" d-inline">
+                                @method('delete')
+                                @csrf
+                                <button class=" border-0" onclick="return confirm('Are you sure?')"><i
+                                        class=" btn bi-x-circle btn-danger"></i></button>
+                            </form>
+
                         </td>
 
                     </tr>
