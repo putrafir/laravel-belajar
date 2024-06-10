@@ -52,9 +52,9 @@
                 @else
                     <img class="img-preview img-fluid mb-3 col-sm-5">
                 @endif
-                <img class="img-preview img-fluid mb-3 col-sm-5">
+                {{-- <img class="img-preview img-fluid mb-3 col-sm-5"> --}}
                 <input class="form-control @error('image') is-invalid @enderror" type="file" id="image"
-                    name="image" value="{{ old('image') }}" onchange="previewImage()">
+                    name="image" value="{{ $post->image }}" onchange="previewImage()">
                 @error('image')
                     <p class=" text-danger">{{ $message }}</p>
                 @enderror
